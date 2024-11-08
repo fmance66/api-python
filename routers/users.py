@@ -67,7 +67,7 @@ async def user(user: User):
             "data": user
         }
     else:
-        raise HTTPException(status_code = 404, detail = f"{resultado["error"]}")
+        raise HTTPException(status_code = 404, detail = f"{resultado['error']}")
         # return {
         #     "estado": "error",
         #     "error": f"{resultado["error"]}"
