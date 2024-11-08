@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import users, products, basic_auth, jwt_auth, users_db
+from routers import users, products, basic_auth, jwt_auth, users_db, products_db
 from fastapi.staticfiles import StaticFiles      # para exponer carpeta static
 
 app = FastAPI()
@@ -20,6 +20,7 @@ app.include_router(basic_auth.router)
 app.include_router(jwt_auth.router)
 
 app.include_router(users_db.router)
+app.include_router(products_db.router)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
  

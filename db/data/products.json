@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1, 
+        "nombre": "mouse inhalámbrico", 
+        "descripcion": "mouse inhalámbrico de 1200 dpi y pila AA", 
+        "categoria": "mouses", 
+        "precio": 12990.90
+    },
+    {
+        "id": 2, 
+        "nombre": "disco ssd", 
+        "descripcion": "disco ssd de 1tb", 
+        "categoria": "discos", 
+        "precio": 98970.00
+    },
+    {
+        "id": 3, 
+        "nombre": "teclado con luz", 
+        "descripcion": "teclado con luz Logitech", 
+        "categoria": "teclados", 
+        "precio": 18350.50 
+    }
+]
