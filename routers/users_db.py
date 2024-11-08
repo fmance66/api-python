@@ -92,11 +92,17 @@ async def user(user: User):
 
     user_update = search_user("_id", ObjectId(user.id))     # busca el usuario actualizado
 
-    return {
-        "estado": "OK",
-        "mensaje": "Usuario modificado correctamente",
-        "data": user_update["data"]
-    }
+    if user_update["estado"] == "OK":
+        return {
+            "estado": "OK",
+            "mensaje": "Usuario modificado correctamente",
+            "data": user_update["data"]
+        }
+    else:
+        return {
+            "estado": "ERROR",
+            "mensaje": "Usuario no encontrado"
+        }
 
 
 @router.delete("/{id}", status_code=status.HTTP_200_OK)
@@ -134,7 +140,6 @@ def search_user(field: str, key):
         return {
             "estado": "ERROR",
             # "mensaje": f"No se encontró el usuario con id: {key}, {error}"
-            "mensaje": f"No se encontró el usuario con id: {key}",
-            "data": {}    
+            "mensaje": f"No se encontró el usuario con id: {key}"
         }
         
