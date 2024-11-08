@@ -40,13 +40,13 @@ async def user(id: str):
 
 
 # @router.get("/")                    # tiene que tener la '/' para que funcione                       
-# async def user(id: int):
+# async def user(id: str):
 #     return search_user(id)
 
 
 @router.get("/search/q")            # si no agrego search no funciona ???                    
-async def user(id: int):
-    return search_user(id)
+async def user(id: str):
+    return search_user("_id", ObjectId(id))
 
 
 # @router.post("/", response_model=User, status_code=status.HTTP_201_CREATED)
@@ -80,10 +80,10 @@ async def user(user: User):
 
     user_dict = dict(user)
     # del user_dict["id"]             # lo elimina para que no lo modifique?
+    print(user_dict)
 
     try:
-        db_client.users.find_one_and_replace(
-            {"_id": ObjectId(user.id)}, user_dict)
+        db_client.users.find_one_and_replace({ "_id": ObjectId(user.id) }, user_dict)
     except:
         return {
             "estado": "ERROR",
@@ -120,7 +120,7 @@ async def user(id: str):
 
 
 def search_user(field: str, key):
-    print("search_user -> id:", id)
+    print("search_user -> field:", field, "  key:", key)
     try:
         user = db_client.users.find_one({field: key})
         return {
@@ -128,8 +128,13 @@ def search_user(field: str, key):
             "mensaje": "Usuario encontrado",
             "data": User(**user_schema(user))
         }
-    except Exception as error:
+    # except Exception as error:
+    except Exception:
+        # print(error)
         return {
             "estado": "ERROR",
-            "mensaje": f"No se encontró el usuario con id: {id}, {error}"
+            # "mensaje": f"No se encontró el usuario con id: {key}, {error}"
+            "mensaje": f"No se encontró el usuario con id: {key}",
+            "data": {}    
         }
+        
