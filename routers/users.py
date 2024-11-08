@@ -70,7 +70,7 @@ async def user(user: User):
         raise HTTPException(status_code = 404, detail = f"{resultado['error']}")
         # return {
         #     "estado": "error",
-        #     "error": f"{resultado["error"]}"
+        #     "error": f"{resultado['error']}"
         # }
 
 @router.put("/")                                    
@@ -86,7 +86,7 @@ async def user(user: User):
     else:
         return {
             "estado": "error",
-            "error": f"{resultado["error"]}"
+            "error": f"{resultado['error']}"
         }
 
 @router.delete("/{id}")                                    
@@ -102,7 +102,7 @@ async def user(id: int):
     else:
         return {
             "estado": "error",
-            "error": f"{resultado["error"]}"
+            "error": f"{resultado['error']}"
         }
 
 def search_user(id: int):
@@ -180,7 +180,7 @@ def update_user(user: User):
     else :
         return {
             "estado": "error",
-            "error": f"{found["error"]}"
+            "error": f"{found['error']}"
         }
 
 def erase_user(id: int):

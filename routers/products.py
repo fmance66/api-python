@@ -56,10 +56,10 @@ async def product(product: Product):
             "data": product
         }
     else:
-        raise HTTPException(status_code = 404, detail = f"{resultado["error"]}")
+        raise HTTPException(status_code = 404, detail = f"{resultado['error']}")
         # return {
         #     "estado": "error",
-        #     "error": f"{resultado["error"]}"
+        #     "error": f"{resultado['error']}"
         # }
 
 @router.put("/")                                    
@@ -75,7 +75,7 @@ async def product(product: Product):
     else:
         return {
             "estado": "error",
-            "error": f"{resultado["error"]}"
+            "error": f"{resultado['error']}"
         }
 
 @router.delete("/{id}")                                    
@@ -91,7 +91,7 @@ async def product(id: int):
     else:
         return {
             "estado": "error",
-            "error": f"{resultado["error"]}"
+            "error": f"{resultado['error']}"
         }
 
 def search_product(id: int):
@@ -168,7 +168,7 @@ def update_product(product: Product):
     else :
         return {
             "estado": "error",
-            "error": f"{found["error"]}"
+            "error": f"{found['error']}"
         }
 
 def erase_product(id: int):
