@@ -1,0 +1,38 @@
+[
+    {
+        "username": "fmancevich",
+        "nombre": "fmancevich",
+        "apellido": "fmancevich",
+        "email": "fmancevich@main-it.com"
+    },
+    {
+        "username": "csainz", 
+        "nombre": "Carlos", 
+        "apellido": "Sainz", 
+        "email": "csainz@maferrari.com.it"
+    },
+    {
+        "username": "ccapotto", 
+        "nombre": "Camilo", 
+        "apellido": "Capotto", 
+        "email": "ccapotto@yahoo.com.ar"
+    },
+    {
+        "username": "rosmartinez", 
+        "nombre": "Rosana Andrea", 
+        "apellido": "Martínez", 
+        "email": "rosmartinez69@google.com"
+    },
+    {
+        "username": "sojeda", 
+        "nombre": "Hernán Sixto", 
+        "apellido": "Ojeda", 
+        "email": "sojeda@yerba.com.py"
+    },
+    {
+        "username": "lmancevich", 
+        "nombre": "Leila Andrea", 
+        "apellido": "Mancevich", 
+        "email": "leimancevich@gmail.com"
+    }
+]

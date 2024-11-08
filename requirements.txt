@@ -1,1 +1,6 @@
 fastapi[all]
+python-jose
+passlib
+bcrypt
+pymongo
+python-multipart
